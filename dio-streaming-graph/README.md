@@ -6,6 +6,10 @@ Solução independente do desafio DIO, criada dentro do fork do exemplo oficial 
 
 Uma plataforma de streaming precisa representar conexões entre usuários, filmes, séries, atores, diretores e gêneros. O banco de grafos permite percorrer essas relações para encontrar afinidades entre conteúdos e usuários, sem reproduzir manualmente múltiplas junções relacionais.
 
+## Aprenda a reconstruir sem IA
+
+Se você quer entender cada decisão e cada comando, leia o **[Curso prático: reconstruir este projeto do zero](docs/CURSO_DO_ZERO.md)**. O guia explica os padrões linha a linha dos scripts de carga, consulta e validação, mostra o fluxo Git/GitHub e inclui exercícios independentes para dominar a modelagem.
+
 ## Modelo
 
 ```mermaid
