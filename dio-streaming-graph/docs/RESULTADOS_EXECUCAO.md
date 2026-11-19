@@ -36,3 +36,14 @@ As duas estratégias demonstrativas de recomendação sugeriram `Rota 47` no top
 ## Nota de privacidade
 
 As capturas originais contêm dados de interface e informações de conta. Recorte ou oculte informações pessoais e identificadores de conexão antes de publicá-las no repositório público. Não publique senhas, tokens ou credenciais.
+
+
+## Integridade de avaliações — verificada em 19/11/2026
+
+A captura fornecida da execução do Neo4j Aura confirma:
+
+| `totalAvaliacoes` | `avaliacoesInvalidas` | `duplicadas` |
+|---:|---:|---:|
+| 50 | 0 | 0 |
+
+A consulta contou relacionamentos `WATCHED`, avaliou notas nulas ou fora da faixa 1–5 e datas ausentes, além de duplicidades por par usuário/conteúdo. **Resultado observado e aprovado.** Ainda resta executar a checagem de que as 10 obras possuem ao menos um ator, diretor e gênero, e publicar as capturas com informações de conta ocultadas.
