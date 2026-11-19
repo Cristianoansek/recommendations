@@ -20,6 +20,15 @@
 :relationships: 166261
 
 :todo: false
+
+== Projeto DIO — Streaming Knowledge Graph
+
+Neste fork há também uma implementação independente do desafio da formação Neo4j / DIO, executada manualmente no Aura com 40 nós e 110 relacionamentos. Inclui diagrama, scripts Cypher, consultas de recomendação e relatório dos resultados observados.
+
+* link:dio-streaming-graph/README.md[Projeto DIO: documentação, modelo e execução]
+* link:dio-streaming-graph/docs/RESULTADOS_EXECUCAO.md[Resultados de execução no Neo4j Aura]
+
+As quantidades no exemplo oficial abaixo pertencem à base original Neo4j Recommendations, que foi preservada.
 image::{icon}[width=100]
 
 == {long-name} Graph Example
