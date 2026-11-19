@@ -1,0 +1,9 @@
+flowchart LR
+ U["User · 10"] -->|"WATCHED (rating, watchedAt)"| M["Movie · 5"]
+ U -->|"WATCHED"| S["Series · 5"]
+ A["Actor · 10"] -->|"ACTED_IN"| M
+ A -->|"ACTED_IN"| S
+ D["Director · 5"] -->|"DIRECTED"| M
+ D -->|"DIRECTED"| S
+ M -->|"IN_GENRE"| G["Genre · 5"]
+ S -->|"IN_GENRE"| G
