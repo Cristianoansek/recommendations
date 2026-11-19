@@ -29,7 +29,7 @@ flowchart LR
 | Director | 5 | id, name |
 | Genre | 5 | id, name |
 
-Relações: `WATCHED` (**50**, propriedade `rating` de 1 a 5, `watchedAt` tipo date), `ACTED_IN` (**30**), `DIRECTED` (**10**), `IN_GENRE` (**20**). São **40 nós e 110 relacionamentos esperados**; ainda não são resultados executados no Neo4j. Os IDs têm unicidade por label, protegida por seis constraints.
+Relações: `WATCHED` (**50**, propriedade `rating` de 1 a 5, `watchedAt` tipo date), `ACTED_IN` (**30**), `DIRECTED` (**10**), `IN_GENRE` (**20**). São **40 nós e 110 relacionamentos**, totais confirmados em execução manual no Neo4j Aura em 19/11/2026. Os IDs têm unicidade por label, protegida por seis constraints.
 
 ## Executar
 
@@ -37,7 +37,7 @@ Relações: `WATCHED` (**50**, propriedade `rating` de 1 a 5, `watchedAt` tipo d
 2. Abra o Neo4j Browser e execute [01_modelo_e_carga.cypher](cypher/01_modelo_e_carga.cypher), em ordem. Se o Browser não aceitar várias instruções, execute cada bloco terminado em ponto e vírgula separadamente.
 3. Execute [02_verificacao.cypher](cypher/02_verificacao.cypher) e confira os totais. O esperado é zero registros inválidos e seis constraints.
 4. Execute individualmente as consultas em [03_consultas_negocio.cypher](cypher/03_consultas_negocio.cypher) para ver rankings, recomendações, preferências e caminhos do grafo.
-5. Faça capturas reais do Neo4j Browser e acrescente em `docs/evidencias/` antes de entregar à DIO. **Nenhuma captura de execução foi fabricada.**
+5. Consulte os [resultados observados no Neo4j Aura](docs/RESULTADOS_EXECUCAO.md) e acrescente as capturas reais em `docs/evidencias/` antes da entrega. **Nenhuma captura de execução foi fabricada.**
 
 O script usa `MERGE` para ser reexecutável sem duplicar os pares de relacionamentos, desde que o modelo esteja no banco dedicado. Não requer APOC nem Graph Data Science.
 
@@ -51,6 +51,15 @@ O script usa `MERGE` para ser reexecutável sem duplicar os pares de relacioname
 - Q6: preferências de gênero a partir das avaliações.
 
 As recomendações são regras demonstrativas e não representam um sistema de produção. Com apenas 10 usuários, a amostra serve para explicar os caminhos de recomendação, não para avaliar precisão estatística.
+
+## Validação real em Neo4j Aura — 19/11/2026
+
+- **40 nós e 110 relacionamentos** confirmados.
+- **50 avaliações WATCHED, zero inválidas e zero duplicadas**.
+- **10 obras e nenhuma sem ator, diretor ou gênero**.
+- Recomendação baseada em conteúdo: **Rota 47** liderou com score 14.
+- Recomendação colaborativa: **Rota 47** (3 pares, nota média 4,67) e **Quase Férias** (2 pares, nota média 4,00).
+- [Relatório detalhado de resultados e evidências](docs/RESULTADOS_EXECUCAO.md).
 
 ## Troubleshooting
 
